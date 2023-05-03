@@ -7,7 +7,6 @@ class Intro extends Phaser.Scene {
         this.load.audio('whoosh', 'whoosh.wav');
     }
     create() {
-        this.cameras.main.setBackgroundColor('#785310');
         this.sound = this.sound.add(
             'whoosh', 
             {
@@ -19,6 +18,8 @@ class Intro extends Phaser.Scene {
         this.cameras.main.fadeIn(5000, 0, 0, 0);
 
         this.graphics = this.add.rectangle(400, 400, 1, 1, 0xb08510).setOrigin(.5, .5);
+
+        this.cameras.main.setBackgroundColor('#785310');
 
         // create text object
         this.textObject = this.add.text(
@@ -82,10 +83,11 @@ class Studio extends Phaser.Scene {
         this.load.audio('whoosh', 'whoosh.wav');
     }
     create() {
-        this.cameras.main.setBackgroundColor('#785310');
         this.cameras.main.fadeIn(5000, 0, 0, 0);
 
         this.graphics = this.add.rectangle(400, 400, 1, 1, 0xb08510).setOrigin(.5, .5);
+        
+        this.cameras.main.setBackgroundColor('#785310');
 
         // create text object
         this.textObject = this.add.text(
