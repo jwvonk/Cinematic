@@ -7,6 +7,7 @@ class Intro extends Phaser.Scene {
         this.load.audio('whoosh', 'whoosh.wav');
     }
     create() {
+        this.cameras.main.setBackgroundColor('#785310');
         this.sound = this.sound.add(
             'whoosh', 
             {
@@ -26,7 +27,7 @@ class Intro extends Phaser.Scene {
             "NOW PRESENTING", //text
             {
                 font: "50px Consolas",
-                color: "#f0f0f0",
+                color: "#ebe0d1",
             } //style
         ).setOrigin(.5, .5);
         this.textObject.setScale(0)
@@ -78,12 +79,10 @@ class Studio extends Phaser.Scene {
     preload() {
         this.load.path = './assets/';
         this.load.image('logo', 'logo.png');
-        // this.load.image('splash', 'splash.png');
-        // this.load.image('title', 'title.png');
-        // this.load.audio('ancient_hum', 'ancient_hum.wav');
         this.load.audio('whoosh', 'whoosh.wav');
     }
     create() {
+        this.cameras.main.setBackgroundColor('#785310');
         this.cameras.main.fadeIn(5000, 0, 0, 0);
 
         this.graphics = this.add.rectangle(400, 400, 1, 1, 0xb08510).setOrigin(.5, .5);
@@ -96,7 +95,7 @@ class Studio extends Phaser.Scene {
    PRODUCTION`, //text
             {
                 font: "50px Consolas",
-                color: "#ffffff",
+                color: "#ebe0d1",
             } //style
         ).setOrigin(.2, .5);
         this.textObject.setScale(0)
@@ -182,8 +181,6 @@ class Title extends Phaser.Scene {
             }
         );
         this.sound.play();
-
-        this.cameras.main.setBackgroundColor('#000000');
 
         //create image object 
         this.imageObject = this.add.image(
@@ -273,7 +270,7 @@ let config = {
     type: Phaser.WEBGL,
     width: 800,
     height: 800,
-    backgroundColor: 0x785310,
+    backgroundColor: 0x000000,
     scene: [Intro, Studio, Title],
 }
 
