@@ -16,8 +16,7 @@ class Intro extends Phaser.Scene {
         this.sound.play();
 
         this.cameras.main.fadeIn(5000, 0, 0, 0);
-        this.cameras.main.setBackgroundColor('#785310');
-
+        
         this.graphics = this.add.rectangle(400, 400, 1, 1, 0xb08510).setOrigin(.5, .5);
 
         this.cameras.main.setBackgroundColor('#785310');
@@ -85,10 +84,9 @@ class Studio extends Phaser.Scene {
     }
     create() {
         this.cameras.main.fadeIn(5000, 0, 0, 0);
-        this.cameras.main.setBackgroundColor('#785310');
 
         this.graphics = this.add.rectangle(400, 400, 1, 1, 0xb08510).setOrigin(.5, .5);
-        
+
         this.cameras.main.setBackgroundColor('#785310');
 
         // create text object
