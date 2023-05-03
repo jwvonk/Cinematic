@@ -1,5 +1,5 @@
 # CMPM120 D1: Cinematic
-1.  3+ Scenes:
+- [x]  3+ Scenes:
     * Introduction
     * Studio Presentation
     * Title Screen
