@@ -4,7 +4,7 @@
     * Studio Presentation
     * Title Screen
 
-2. 2+ Audio Assets:
+2. [x] 2+ Audio Assets:
     * Wind Sound Effect
         * Recording of myself
         * Added fade & volume effects Audacity
