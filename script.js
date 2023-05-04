@@ -8,7 +8,7 @@ class Intro extends Phaser.Scene {
     }
     create() {
         this.sound = this.sound.add(
-            'whoosh', 
+            'whoosh',
             {
                 loop: true,
             }
@@ -16,7 +16,7 @@ class Intro extends Phaser.Scene {
         this.sound.play();
 
         this.cameras.main.fadeIn(5000, 0, 0, 0);
-        
+
         this.graphics = this.add.rectangle(400, 400, 1, 1, 0xb08510).setOrigin(.5, .5);
 
         this.cameras.main.setBackgroundColor('#785310');
@@ -30,8 +30,9 @@ class Intro extends Phaser.Scene {
                 font: "50px Consolas",
                 color: "#ebe0d1",
             } //style
-        ).setOrigin(.5, .5);
-        this.textObject.setScale(0)
+        ).setOrigin(.5, .5).setScale(0);
+
+        this.textObject.preFX.addBloom();
 
         // Add tweens
         this.tweens.add({
@@ -93,22 +94,22 @@ class Studio extends Phaser.Scene {
         this.textObject = this.add.text(
             385, //x
             400,//y
-`A PYRMD STUDIOS
+            `A PYRMD STUDIOS
    PRODUCTION`, //text
             {
                 font: "50px Consolas",
                 color: "#ebe0d1",
             } //style
-        ).setOrigin(.2, .5);
-        this.textObject.setScale(0)
+        ).setOrigin(.2, .5).setScale(0);
+
+        this.textObject.preFX.addBloom();
 
         //create image object 
         this.imageObject = this.add.image(
             400,//x
             400,//y
             'logo',//imagename
-        ).setOrigin(.5, .5)
-        this.imageObject.setScale(0) //resize
+        ).setOrigin(.5, .5).setScale(0); //resize
 
         // Add tweens
         this.tweens.add({
@@ -123,7 +124,7 @@ class Studio extends Phaser.Scene {
             targets: this.imageObject,
             scale: 0.3,
             x: 175,
-            duration:5000,
+            duration: 5000,
             ease: 'Sine'
         });
 
@@ -147,9 +148,9 @@ class Studio extends Phaser.Scene {
                 targets: this.imageObject,
                 scale: 0,
                 x: 400,
-                duration:5000,
+                duration: 5000,
                 ease: 'Sine.easeIn'
-            })
+            });
             this.tweens.add({
                 targets: this.textObject,
                 scale: 0,
@@ -169,7 +170,6 @@ class Title extends Phaser.Scene {
     }
     preload() {
         this.load.path = './assets/';
-        // this.load.image('logo', 'logo.png');
         this.load.image('splash', 'splash.png');
         this.load.image('title', 'title.png');
         this.load.audio('ancient_hum', 'ancient_hum.wav');
@@ -177,7 +177,7 @@ class Title extends Phaser.Scene {
     }
     create() {
         this.sound = this.sound.add(
-            'ancient_hum', 
+            'ancient_hum',
             {
                 loop: true,
             }
@@ -195,9 +195,8 @@ class Title extends Phaser.Scene {
             400,
             400,
             'title',
-        ).setOrigin(.5, .5);
-        title.setAlpha(0);
-        
+        ).setOrigin(.5, .5).setAlpha(0);
+
         // create text object
         let play = this.add.text(
             460, //x
@@ -207,7 +206,10 @@ class Title extends Phaser.Scene {
                 font: "50px Consolas",
                 color: "#ebe0d1",
             } //style
-        ).setAlpha(0);;
+        ).setAlpha(0);
+
+        play.preFX.addBloom();
+
 
         let settings = this.add.text(
             440,
@@ -217,7 +219,9 @@ class Title extends Phaser.Scene {
                 font: "50px Consolas",
                 color: "#ebe0d1",
             }
-        ).setAlpha(0);;
+        ).setAlpha(0);
+
+        settings.preFX.addBloom();
 
         // Add tweens
 
@@ -232,7 +236,7 @@ class Title extends Phaser.Scene {
             this.tweens.add({
                 targets: title,
                 y: 115,
-                duration:5000,
+                duration: 5000,
                 ease: 'Sine.easeInOut'
             });
 
@@ -248,7 +252,7 @@ class Title extends Phaser.Scene {
             this.tweens.add({
                 targets: play,
                 alpha: 1,
-                duration:1000,
+                duration: 1000,
                 ease: 'Sine.easeInOut'
             });
         });
@@ -257,7 +261,7 @@ class Title extends Phaser.Scene {
             this.tweens.add({
                 targets: settings,
                 alpha: 1,
-                duration:1000,
+                duration: 1000,
                 ease: 'Sine.easeInOut'
             });
         });
